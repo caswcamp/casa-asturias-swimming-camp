@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Casa Asturias Swimming Camp | CASWC</title>
+  <meta name="description" content="Casa Asturias Swimming Camp. Campus de natación para jóvenes nadadores. Turnos de julio y agosto." />
+  <style>
+    :root {
+      --blue: #0057b8;
+      --dark-blue: #003a7a;
+      --light-blue: #e8f3ff;
+      --white: #ffffff;
+      --text: #123;
+      --muted: #5d6b7a;
+      --green: #0a8f55;
+      --orange: #f59e0b;
+      --shadow: 0 16px 40px rgba(0, 55, 120, 0.14);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background: #f6fbff;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+
+    .hero {
+      min-height: 72vh;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(135deg, rgba(0, 57, 122, 0.92), rgba(0, 87, 184, 0.78)),
+        url("https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&w=1600&q=80") center/cover;
+      color: var(--white);
+      padding: 64px 20px;
+    }
+
+    .container {
+      width: min(1120px, 100%);
+      margin: 0 auto;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.28);
+      font-weight: 700;
+      font-size: 0.92rem;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 7vw, 5.4rem);
+      line-height: 0.95;
+      margin: 0 0 18px;
+      letter-spacing: -0.06em;
+    }
+
+    .hero p {
+      font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+      max-width: 720px;
+      margin: 0 0 30px;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 800;
+      text-decoration: none;
+      border: 2px solid transparent;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+    .btn-primary { background: var(--white); color: var(--blue); }
+    .btn-outline { border-color: rgba(255,255,255,.65); color: var(--white); }
+    .btn-blue { background: var(--blue); color: var(--white); }
+    .btn-wait { background: var(--orange); color: #1d1300; }
+
+    section { padding: 72px 20px; }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      line-height: 1;
+      margin: 0 0 12px;
+      letter-spacing: -0.04em;
+      color: var(--dark-blue);
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 760px;
+      margin: 0 0 34px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(0, 87, 184, 0.08);
+    }
+
+    .turno h3 {
+      font-size: 1.35rem;
+      color: var(--dark-blue);
+      margin: 0 0 6px;
+    }
+
+    .turno .date {
+      font-weight: 800;
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: .86rem;
+      background: var(--light-blue);
+      color: var(--dark-blue);
+      margin-bottom: 16px;
+    }
+
+    .capacity {
+      font-weight: 800;
+      color: var(--green);
+      margin: 14px 0 20px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .features li {
+      background: var(--white);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+      font-weight: 700;
+    }
+
+    .info-band {
+      background: var(--dark-blue);
+      color: var(--white);
+      border-radius: 28px;
+      padding: 34px;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 26px;
+      align-items: center;
+    }
+
+    .info-band h2 {
+      margin: 0 0 10px;
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      line-height: 1;
+    }
+
+    .price {
+      font-size: 2.8rem;
+      font-weight: 900;
+      letter-spacing: -0.05em;
+    }
+
+    .contact {
+      background: var(--white);
+      border-radius: 24px;
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+
+    footer {
+      padding: 34px 20px;
+      background: #001f42;
+      color: rgba(255,255,255,.78);
+      text-align: center;
+      font-size: .95rem;
+    }
+
+    @media (max-width: 860px) {
+      .grid, .features, .info-band { grid-template-columns: 1fr; }
+      .hero { min-height: auto; }
+      section { padding: 54px 18px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <div class="badge">CASWC · Verano 2026</div>
+      <h1>Casa Asturias<br />Swimming Camp</h1>
+      <p>Campus de natación para jóvenes nadadores orientado a la mejora técnica, el trabajo físico complementario y la convivencia deportiva.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#turnos">Reservar plaza</a>
+        <a class="btn btn-outline" href="dossier-caswc.pdf" target="_blank" rel="noopener">Descargar dossier</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="turnos">
+      <div class="container">
+        <h2 class="section-title">Turnos disponibles</h2>
+        <p class="section-subtitle">Cada turno tiene un máximo de 25 plazas. La plaza queda confirmada únicamente tras verificar el pago de la reserva del 50%.</p>
+
+        <div class="grid">
+          <article class="card turno">
+            <span class="pill">Tecnificación</span>
+            <h3>1º turno</h3>
+            <div class="date">6 al 10 de julio</div>
+            <p>Nacidos en 2016 y anteriores. Trabajo técnico en estilos, virajes, salidas y nado subacuático.</p>
+            <div class="capacity">Plazas: actualizar / 25</div>
+            <a class="btn btn-blue" href="https://tally.so/r/PdvqQP" target="_blank" rel="noopener">Reservar plaza</a>
+          </article>
+
+          <article class="card turno">
+            <span class="pill">Básico</span>
+            <h3>2º turno</h3>
+            <div class="date">20 al 24 de julio</div>
+            <p>Nacidos en 2016 y anteriores. Turno orientado a nivel básico con dominio de estilos de natación.</p>
+            <div class="capacity">Plazas: actualizar / 25</div>
+            <a class="btn btn-blue" href="#" target="_blank" rel="noopener">Añadir enlace Tally</a>
+          </article>
+
+          <article class="card turno">
+            <span class="pill">Tecnificación</span>
+            <h3>3º turno</h3>
+            <div class="date">3 al 7 de agosto</div>
+            <p>Nacidos en 2016 y anteriores. Mejora técnica individualizada y sesiones de análisis en vídeo.</p>
+            <div class="capacity">Plazas: actualizar / 25</div>
+            <a class="btn btn-blue" href="#" target="_blank" rel="noopener">Añadir enlace Tally</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2 class="section-title">Qué incluye</h2>
+        <p class="section-subtitle">Un programa diario que combina entrenamiento en agua, preparación física, formación técnica y actividades de grupo.</p>
+        <ul class="features">
+          <li>Sesiones técnicas diarias en agua</li>
+          <li>Trabajo físico en seco</li>
+          <li>Análisis técnico mediante vídeo</li>
+          <li>Charlas técnicas y formativas</li>
+          <li>Movilidad y prevención de lesiones</li>
+          <li>Actividades lúdicas y cohesión de grupo</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="info-band">
+          <div>
+            <h2>Precio e inscripción</h2>
+            <p>La inscripción se realiza mediante formulario online. Para confirmar la plaza será necesario abonar una reserva del 50% mediante transferencia. En caso de cupo completo, se habilitará lista de espera.</p>
+          </div>
+          <div>
+            <div class="price">110€</div>
+            <strong>por turno</strong><br />Reserva: 50%
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2 class="section-title">Equipo técnico</h2>
+        <p class="section-subtitle">Campus organizado por León Activo S.L., con dirección y coordinación técnica de Álvaro Santos Cadenas y la participación del equipo técnico del CNCA.</p>
+        <div class="contact">
+          <h3>Contacto</h3>
+          <p><strong>Email:</strong> <a href="mailto:caswcamp@gmail.com">caswcamp@gmail.com</a></p>
+          <p><strong>Teléfono:</strong> <a href="tel:+34685542133">685 542 133</a></p>
+          <div class="actions">
+            <a class="btn btn-blue" href="https://tally.so/r/PdvqQP" target="_blank" rel="noopener">Inscribirme al 1º turno</a>
+            <a class="btn btn-wait" href="#" target="_blank" rel="noopener">Lista de espera</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Casa Asturias Swimming Camp · CASWC · Verano 2026
+  </footer>
+</body>
+</html>
