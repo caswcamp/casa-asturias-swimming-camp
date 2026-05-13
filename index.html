@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Casa Asturias Swimming Camp | CASWC</title>
+
+  <style>
+    :root{
+      --blue:#0057b8;
+      --dark:#003a7a;
+      --light:#eef6ff;
+      --white:#ffffff;
+      --text:#17324d;
+    }
+
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    body{
+      font-family:Arial, Helvetica, sans-serif;
+      background:#f7fbff;
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    .hero{
+      min-height:70vh;
+      background:
+      linear-gradient(rgba(0,57,122,.75),rgba(0,87,184,.7)),
+      url('https://images.unsplash.com/photo-1530549387789-4c1017266635?auto=format&fit=crop&w=1600&q=80');
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      color:white;
+      padding:40px 20px;
+    }
+
+    .hero-content{
+      max-width:900px;
+    }
+
+    h1{
+      font-size:clamp(3rem,8vw,5.5rem);
+      line-height:0.95;
+      margin-bottom:20px;
+    }
+
+    .hero p{
+      font-size:1.2rem;
+      margin-bottom:30px;
+    }
+
+    .buttons{
+      display:flex;
+      gap:15px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:14px 24px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:bold;
+      transition:.2s;
+    }
+
+    .btn-primary{
+      background:white;
+      color:var(--blue);
+    }
+
+    .btn-secondary{
+      border:2px solid white;
+      color:white;
+    }
+
+    .btn-blue{
+      background:var(--blue);
+      color:white;
+    }
+
+    .btn:hover{
+      transform:translateY(-2px);
+    }
+
+    section{
+      padding:70px 20px;
+    }
+
+    .container{
+      max-width:1100px;
+      margin:auto;
+    }
+
+    .section-title{
+      font-size:2.7rem;
+      color:var(--dark);
+      margin-bottom:10px;
+      text-align:center;
+    }
+
+    .section-sub{
+      text-align:center;
+      margin-bottom:40px;
+      color:#5c7188;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:20px;
+    }
+
+    .card{
+      background:white;
+      border-radius:24px;
+      padding:25px;
+      box-shadow:0 10px 30px rgba(0,0,0,.08);
+    }
+
+    .card h3{
+      color:var(--dark);
+      margin-bottom:10px;
+      font-size:1.5rem;
+    }
+
+    .tag{
+      display:inline-block;
+      padding:6px 12px;
+      background:var(--light);
+      border-radius:999px;
+      color:var(--dark);
+      font-weight:bold;
+      margin-bottom:15px;
+      font-size:.9rem;
+    }
+
+    .capacity{
+      margin:18px 0;
+      font-weight:bold;
+      color:#00894c;
+    }
+
+    ul.features{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:15px;
+      list-style:none;
+    }
+
+    ul.features li{
+      background:white;
+      padding:18px;
+      border-radius:18px;
+      box-shadow:0 10px 20px rgba(0,0,0,.06);
+      font-weight:bold;
+    }
+
+    .price-box{
+      background:var(--dark);
+      color:white;
+      padding:40px;
+      border-radius:28px;
+      text-align:center;
+    }
+
+    .price{
+      font-size:4rem;
+      font-weight:900;
+      margin:10px 0;
+    }
+
+    .contact{
+      background:white;
+      border-radius:24px;
+      padding:30px;
+      box-shadow:0 10px 30px rgba(0,0,0,.08);
+      text-align:center;
+    }
+
+    footer{
+      background:#001f42;
+      color:white;
+      text-align:center;
+      padding:30px 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Casa Asturias<br>Swimming Camp</h1>
+
+      <p>
+        Campus de natación orientado a la mejora técnica,
+        el trabajo físico y la convivencia deportiva.
+      </p>
+
+      <div class="buttons">
+        <a class="btn btn-primary" href="#turnos">
+          Reservar plaza
+        </a>
+
+        <a class="btn btn-secondary" href="dossier-caswc.pdf" target="_blank">
+          Descargar dossier
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section id="turnos">
+    <div class="container">
+
+      <h2 class="section-title">Turnos disponibles</h2>
+
+      <p class="section-sub">
+        Máximo 25 plazas por turno.
+      </p>
+
+      <div class="cards">
+
+        <div class="card">
+          <span class="tag">Tecnificación</span>
+
+          <h3>1º Turno</h3>
+
+          <p><strong>6 al 10 de julio</strong></p>
+
+          <p>
+            Trabajo técnico de estilos,
+            virajes, salidas y nado subacuático.
+          </p>
+
+          <div class="capacity">
+            Plazas disponibles: actualizar / 25
+          </div>
+
+          <a class="btn btn-blue"
+             href="https://tally.so/r/PdvqQP"
+             target="_blank">
+            Reservar plaza
+          </a>
+        </div>
+
+        <div class="card">
+          <span class="tag">Básico</span>
+
+          <h3>2º Turno</h3>
+
+          <p><strong>20 al 24 de julio</strong></p>
+
+          <p>
+            Turno orientado a nivel básico
+            y mejora técnica general.
+          </p>
+
+          <div class="capacity">
+            Plazas disponibles: actualizar / 25
+          </div>
+
+          <a class="btn btn-blue" href="#">
+            Próximamente
+          </a>
+        </div>
+
+        <div class="card">
+          <span class="tag">Tecnificación</span>
+
+          <h3>3º Turno</h3>
+
+          <p><strong>3 al 7 de agosto</strong></p>
+
+          <p>
+            Mejora técnica individualizada
+            y análisis mediante vídeo.
+          </p>
+
+          <div class="capacity">
+            Plazas disponibles: actualizar / 25
+          </div>
+
+          <a class="btn btn-blue" href="#">
+            Próximamente
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+
+      <h2 class="section-title">Qué incluye</h2>
+
+      <p class="section-sub">
+        Programa diario de entrenamiento y actividades.
+      </p>
+
+      <ul class="features">
+        <li>Entrenamientos técnicos en agua</li>
+        <li>Trabajo físico en seco</li>
+        <li>Análisis técnico mediante vídeo</li>
+        <li>Charlas formativas</li>
+        <li>Prevención de lesiones</li>
+        <li>Actividades lúdicas y convivencia</li>
+      </ul>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+
+      <div class="price-box">
+
+        <h2>Precio por turno</h2>
+
+        <div class="price">110€</div>
+
+        <p>
+          Reserva del 50% para confirmar plaza.
+        </p>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+
+      <div class="contact">
+
+        <h2 class="section-title">
+          Contacto
+        </h2>
+
+        <p>
+          <strong>Email:</strong><br>
+          <a href="mailto:caswcamp@gmail.com">
+            caswcamp@gmail.com
+          </a>
+        </p>
+
+        <br>
+
+        <p>
+          <strong>Teléfono:</strong><br>
+          <a href="tel:+34685542133">
+            685 542 133
+          </a>
+        </p>
+
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    CASA ASTURIAS SWIMMING CAMP · CASWC
+  </footer>
+
+</body>
+</html>
